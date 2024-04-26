@@ -22,8 +22,30 @@ def load_data():
     return df
 
 df=load_data()
+st.write("""
+    In this comprehensive project, we delve into the visualization of various key aspects concerning players in the top 5 football/soccer leagues. Our exploration is centered around a rich dataset sourced from a CSV file named 'top5_leagues_player.csv'. Throughout this project, we aim to visualize and analyze a multitude of dimensions within the football landscape.
+
+    Some of the focal points of our visualizations include:
+    
+    1. Price vs League: Examining the correlation between player prices and the leagues they belong to.
+    2. Club vs Outfitter: Visualizing the relationship between football clubs and their respective outfitters.
+    3. Age vs Price: Analyzing the relationship between player age and their market value.
+    4. Position vs Price: Exploring how player positions impact their market values.
+    5. Nation vs League: Exploring how nations are represented across different football leagues.
+    6. Nation vs Market Value: Investigating the market values of players from different nations.
+    7. Club Market Value: Analyzing the overall market value of football clubs.
+    8. Left Foot vs Right Foot: Comparing the market values and distribution of left-footed and right-footed players.
+    9. Future Market Value Predictor: Building a predictive model to forecast future market values of players.
+
+    Through these visualizations and analyses, our overarching goal is to not only provide valuable insights into the football/soccer ecosystem but also to educate and inform enthusiasts about the intricacies and dynamics of this great sport.
+    """)
+
+
 st.write("## Scatter Plot from CSV")
 st.write(df)
+
+
+
 
 max_prices = df.groupby('league')['price'].max().reset_index()
 
