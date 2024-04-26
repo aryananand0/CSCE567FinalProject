@@ -25,7 +25,9 @@ chosen_nation = st.sidebar.selectbox('Choose Nation:', df['nationality'].unique(
 
 # Filter data based on chosen nation
 filtered_player_counts = player_counts[player_counts['nationality'] == chosen_nation]
-
+st.title("Nationality by League Affiliation")
+st.write("This graph visually represents the distribution of players from each country across the top 5 soccer leagues. It provides insight into nations with the most top players, as countries with players in these elite leagues are often considered to have a stronger footballing pedigree. This is because players who regularly compete in the top 5 leagues gain invaluable experience facing the best competition week in and week out, enhancing their skills and adaptability. Consequently, players from these nations tend to command higher values due to their exposure to top-level football and the competitive edge it fosters. This graph serves as a reflection of the global talent pool in football, showcasing the countries that produce players capable of thriving in the most prestigious leagues worldwide.")
+st.write("To interact with this graph effectively, you can utilize the sidebar to select and view the distribution of players from any country you're interested in. Simply choose the country you want to explore, and the graph will dynamically update to show you how many players from that country are present in each of the top 5 soccer leagues. Additionally, hovering over each segment of the graph provides detailed information, giving you precise numbers of players in each league right at your fingertips. This interactive functionality enhances your ability to analyze and understand the global distribution of players across these prestigious leagues, offering a comprehensive view of football talent worldwide.")
 # Create bar graph for distribution of players by league affiliation
 fig = px.bar(filtered_player_counts, x='league', y='count', color='league',
              title=f'Distribution of Players from {chosen_nation} by League Affiliation',
